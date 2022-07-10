@@ -1,8 +1,11 @@
 var skills = document.getElementById("skills");
 var ps = document.getElementById("ps");
 var small = document.images[0];
+var smallSig = document.images[1];
 var big;
+var bigSig;
 loadsmall(small, big, "./images/bgcover.jpg", 2000);
+loadsmall(smallSig, bigSig, "/images/Untitled-2.png", 1000);
 //reusable small image load
 function loadsmall(smallImg, bigImg, source, time) {
   bigImg = document.createElement("img");
