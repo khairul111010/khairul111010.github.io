@@ -1,14 +1,18 @@
 var skills = document.getElementById("skills");
 var ps = document.getElementById("ps");
 var small = document.images[0];
-// console.log(small);
-var big = document.createElement("img");
-big.onload = function () {
-  small.src = this.src;
-};
-setTimeout(function () {
-  big.src = "./images/bgcover.jpg";
-}, 2000);
+var big;
+loadsmall(small, big, "./images/bgcover.jpg", 2000);
+//reusable small image load
+function loadsmall(smallImg, bigImg, source, time) {
+  bigImg = document.createElement("img");
+  bigImg.onload = function () {
+    smallImg.src = this.src;
+  };
+  setTimeout(function () {
+    bigImg.src = source;
+  }, time);
+}
 
 skills.onclick = function myFunction() {
   ps.classList.toggle("font");
