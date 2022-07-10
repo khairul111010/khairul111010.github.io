@@ -1,5 +1,14 @@
 var skills = document.getElementById("skills");
 var ps = document.getElementById("ps");
+var small = document.images[0];
+// console.log(small);
+var big = document.createElement("img");
+big.onload = function () {
+  small.src = this.src;
+};
+setTimeout(function () {
+  big.src = "./images/bgcover.jpg";
+}, 2000);
 
 skills.onclick = function myFunction() {
   ps.classList.toggle("font");
