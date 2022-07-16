@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Secular+One&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -54,6 +55,22 @@
   transform: scaleX(1);
   transform-origin: 0 0;
 }
+.personal-qoute {
+  padding: 1.5em;
+  position: relative;
+  color: #eee;
+  margin-top: 5em;
+}
+.qoute {
+  font-family: "Roboto Mono", monospace;
+  text-align: center;
+  font-size: 1.5rem;
+  /* padding: 3em; */
+  /* margin: 1em; */
+}
+.fav-qoute {
+  text-align: center;
+}
 
 .details {
   display: grid;
@@ -61,7 +78,7 @@
   grid-gap: 10px;
   color: white;
   padding: 1.5em;
-  margin-top: calc(100vh - 420px);
+  /* margin-top: calc(100vh - 420px); */
 }
 .details h1 {
   font-size: 1.2rem;
@@ -184,5 +201,15 @@
   .social-links.active {
     /* border: 1px solid rgb(182, 182, 182); */
     left: 0;
+  }
+}
+
+@media screen and (max-width: 524px) {
+  .qoute {
+    font-size: 1rem;
+    margin-top: 2em;
+  }
+  .fav-qoute {
+    font-size: 0.8rem;
   }
 }
