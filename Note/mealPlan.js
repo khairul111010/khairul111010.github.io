@@ -1,3 +1,4 @@
+let count = 0;
 let meal = [],
   data = [],
   food = [];
@@ -16,10 +17,24 @@ for (let index = 0; index < mealPlanList.length; index++) {
     data.push({
       meal_type_cat_id: element.data[i].category_id,
       block_id: element.data[i].block_id,
+      title: element.data[i].meal_type,
       protein: element.data[i].protein,
       fats: element.data[i].fats,
       carbohydrates: element.data[i].carbohydrates,
       food: food,
+    });
+
+    console.log({
+      block_category_id: element.block_category_id,
+      block_id: element.data[i].block_id,
+      meal_type_cat_id: element.data[i].category_id,
+      week_day_id: element.day_id,
+      title: element.data[i].meal_type,
+      user_id: req.auth.id,
+      protein: element.data[i].protein,
+      fats: element.data[i].fats,
+      carbohydrates: element.data[i].carbohydrates,
+      count: count++,
     });
     food = [];
   }
