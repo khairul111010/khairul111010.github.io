@@ -47,3 +47,29 @@ for (let index = 0; index < mealPlanList.length; index++) {
   data = [];
 }
 res.json(meal);
+
+console.log("_______________________________");
+const customMealPlanUserDataExists = (user_id) => {
+  return MealPlan.findAll({
+    where: { user_id: user_id },
+  });
+};
+customMealPlanUserDataExists(element.user_id).then((response) => {
+  if (response) {
+    response.map((r) => {
+      MealPlan.destroy({
+        where: {
+          id: r.dataValues.id,
+          user_id: element.user_id,
+        },
+      }).then((result) => {
+        Ingredient.destroy({
+          where: {
+            item_id: r.dataValues.id,
+          },
+        });
+      });
+    });
+  } else {
+  }
+});
